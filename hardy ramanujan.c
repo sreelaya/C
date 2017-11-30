@@ -1,0 +1,33 @@
+#include<stdio.h>
+main()
+{
+    int num = 35000,l,m,n,o,l3,m3,n3,o3;
+    for(l=1;l<=num;l++)
+    {
+        l3=l*l*l;
+        if(l3>num)
+        break;
+        for(m=l;m<=num;m++)
+        {
+            m3=m*m*m;
+            if(l3+m3>num)
+           	break;
+            for(n=l+1;n<=num;n++)
+            {
+                n3=n*n*n;
+                if(n3>l3+m3)
+                break;
+                for(o=n;o<=num;o++)
+                {
+                    o3=o*o*o;
+                    if(n3+o3>l3+m3)
+                    break;
+                    if(n3+o3==l3+m3)
+                    {
+                        printf("%d = %d^3 + %d^3 = %d^3 + %d^3 \n",(l3+m3),l,m,n,o);
+                    }
+                }
+            }
+        }
+    }
+}
